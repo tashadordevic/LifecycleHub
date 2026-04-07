@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# LifecycleHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Local-first CRM for solopreneurs and freelancers.**  
+Your data stays on your machine. No cloud. No subscriptions. No vendor lock-in. Free forever.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Why LifecycleHub?
 
-### `npm start`
+Most CRMs are built for enterprise teams with big budgets and bigger privacy concerns. LifecycleHub is built for the person working alone — the freelancer, the consultant, the one-person business.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Local-first** — Your data lives in a SQLite database on your computer. Nobody else can access it.
+- **Open-source** — MIT licensed. No black boxes.
+- **Free forever** — No subscriptions, no tiers, no hidden costs.
+- **Linux native** — Built as a desktop app for Linux using Electron.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Dashboard** — Overview of your customer lifecycle, health distribution, and pipeline at a glance
+- **Customer Management** — Add, edit, and track contacts with lifecycle stages and health scores
+- **Lifecycle Stages** — Customizable stages (Onboarding, Adoption, Retention, Expansion, Risk)
+- **Health Scoring** — Visual health indicators to identify at-risk customers
+- **Signals & Activity** — Log customer interactions and track recent activity
+- **Reports** — Summary views of your pipeline by stage, segment, and health
+- **Integrations** — API connection support for CRM, Analytics, Support, and Messaging tools
+- **Local SQLite storage** — All data stored locally via better-sqlite3, no cloud required
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend:** React, Tailwind CSS, Radix UI, Recharts
+- **Desktop:** Electron 28
+- **Storage:** SQLite via better-sqlite3 (local, no cloud)
+- **Auth:** JWT (local only)
+- **Build:** electron-builder → .deb package for Linux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Option 1: Download the .deb package (recommended)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Download the latest `.deb` release from the [Releases](https://github.com/tashadordevic/LifecycleHub/releases) page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+sudo dpkg -i lifecyclehub_1.0.0_amd64.deb
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Then launch LifecycleHub from your application menu.
 
-## Learn More
+### Option 2: Run from source
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Requirements:** Node.js 18+, Yarn 1.22+
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/tashadordevic/LifecycleHub.git
+cd LifecycleHub/frontend
+yarn install
+./node_modules/.bin/electron-rebuild -f -w better-sqlite3
+yarn electron-dev
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Building the .deb yourself
 
-### Analyzing the Bundle Size
+```bash
+cd frontend
+yarn install
+./node_modules/.bin/electron-rebuild -f -w better-sqlite3
+yarn build-electron
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The `.deb` file will be in `frontend/dist-electron/`.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Roadmap
 
-### Advanced Configuration
+- [ ] CSV import/export for contacts
+- [ ] Real API integrations (HubSpot, Intercom, Zendesk, etc.)
+- [ ] Notes and task management per customer
+- [ ] Email logging via IMAP
+- [ ] Dark/light theme toggle
+- [ ] AppImage build for broader Linux support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Support the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+LifecycleHub is free and open-source. If it saves you money on CRM subscriptions, consider buying me a coffee.
 
-### `npm run build` fails to minify
+[![Ko-fi](https://img.shields.io/badge/Support%20on-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/natashad)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## License
+
+MIT © 2025 Natasha Dordevic
