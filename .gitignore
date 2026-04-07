@@ -1,0 +1,7 @@
+node_modules/
+dist-electron/
+build/
+.env
+*.db
+*.db
+*.bak
