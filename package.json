@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Lifecycle Management Operating System for Customer Success",
   "author": {
-    "name": "LifecycleHub Team",
-    "email": "support@lifecyclehub.io"
+    "name": "Natasha Dordevic",
+    "email": "taliya@ik.me"
   },
   "private": true,
   "main": "electron.js",
