@@ -1,6 +1,7 @@
 # LifecycleHub
 
 **Local-first CRM for solopreneurs and freelancers.**  
+
 Your data stays on your machine. No cloud. No subscriptions. No vendor lock-in. Free forever.
 ![LifecycleHub Dashboard](lifecyclehub%20dashboard%20screenshot.png)
 ---
